@@ -12,9 +12,11 @@ public interface VectorDistanceCalculator {
     double dotProduct(float[] v1, float[] v2);
 
     // https://en.wikipedia.org/wiki/Taxicab_geometry
-    double l1Distance(float[] v1, float[] v2);
+    // Aka L1 distance
+    double manhattanDistance(float[] v1, float[] v2);
 
     // https://en.wikipedia.org/wiki/Euclidean_distance
-    double l2Distance(float[] v1, float[] v2);
+    // Aka L2 distance
+    double euclideanDistance(float[] v1, float[] v2);
 
 }

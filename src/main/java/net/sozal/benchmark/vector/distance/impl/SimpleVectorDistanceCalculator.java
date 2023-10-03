@@ -30,7 +30,7 @@ public class SimpleVectorDistanceCalculator implements VectorDistanceCalculator 
     }
 
     @Override
-    public double l1Distance(float[] v1, float[] v2) {
+    public double manhattanDistance(float[] v1, float[] v2) {
         double sumAbsDiff = 0.0;
         for (int i = 0; i < v1.length; i++) {
             sumAbsDiff += Math.abs(v1[i] - v2[i]);
@@ -39,7 +39,7 @@ public class SimpleVectorDistanceCalculator implements VectorDistanceCalculator 
     }
 
     @Override
-    public double l2Distance(float[] v1, float[] v2) {
+    public double euclideanDistance(float[] v1, float[] v2) {
         double sumSqrDiff = 0.0;
         for (int i = 0; i < v1.length; i++) {
             sumSqrDiff += Math.pow(v1[i] - v2[i], 2);

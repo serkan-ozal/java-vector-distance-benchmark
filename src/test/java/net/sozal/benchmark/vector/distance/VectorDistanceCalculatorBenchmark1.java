@@ -70,14 +70,14 @@ public class VectorDistanceCalculatorBenchmark1 {
     }
 
     @Benchmark
-    public void l1DistanceSimple(BenchmarkState state, Blackhole bh) {
-        double distance = state.simple.l1Distance(state.v1, state.v2);
+    public void manhattanDistanceSimple(BenchmarkState state, Blackhole bh) {
+        double distance = state.simple.manhattanDistance(state.v1, state.v2);
         bh.consume(distance);
     }
 
     @Benchmark
-    public void l2DistanceSimple(BenchmarkState state, Blackhole bh) {
-        double distance = state.simple.l2Distance(state.v1, state.v2);
+    public void euclideanDistanceSimple(BenchmarkState state, Blackhole bh) {
+        double distance = state.simple.euclideanDistance(state.v1, state.v2);
         bh.consume(distance);
     }
 
