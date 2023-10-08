@@ -15,6 +15,32 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+      - run: npm install systeminformation
+      - name: Print System Info
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const si = require('systeminformation');
+            
+            si.system()
+              .then(data => console.log('System:', data))
+              .catch(error => console.error('Error occurred while getting System info:', error));
+            
+            si.osInfo()
+              .then(data => console.log('OS:', data))
+              .catch(error => console.error('Error occurred while getting OS info:', error));
+            
+            si.cpu()
+              .then(data => console.log('CPU:', data))
+              .catch(error => console.error('Error occurred while getting CPU info:', error));
+            
+            si.cpuFlags()
+              .then(data => console.log('CPU Flags:', data))
+              .catch(error => console.error('Error occurred while getting CPU flags info:', error));
+            
+            si.mem()
+              .then(data => console.log('Memory:', data))
+              .catch(error => console.error('Error occurred while getting memory info:', error));
       - name: Print Environment Info
         run: make print-env
       - name: Set up JDK 21
