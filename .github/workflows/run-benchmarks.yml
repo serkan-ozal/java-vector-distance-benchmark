@@ -41,8 +41,6 @@ jobs:
             si.mem()
               .then(data => console.log('Memory:', data))
               .catch(error => console.error('Error occurred while getting memory info:', error));
-      - name: Print Environment Info
-        run: make print-env
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
