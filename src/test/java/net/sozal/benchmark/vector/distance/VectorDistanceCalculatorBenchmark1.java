@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
  * @author sozal
  */
 @BenchmarkMode(Mode.Throughput)
-@Fork(value = 1)
+@Fork(value = 3)
 @Warmup(time = 5, iterations = 3, timeUnit = TimeUnit.SECONDS)
 @Measurement(time = 30, iterations = 5, timeUnit = TimeUnit.SECONDS)
 public class VectorDistanceCalculatorBenchmark1 {
