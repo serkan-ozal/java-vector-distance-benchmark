@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.Throughput)
 @Fork(value = 1)
 @Warmup(time = 5, iterations = 3, timeUnit = TimeUnit.SECONDS)
-@Measurement(time = 5, iterations = 10, timeUnit = TimeUnit.SECONDS)
+@Measurement(time = 30, iterations = 5, timeUnit = TimeUnit.SECONDS)
 public class VectorDistanceCalculatorBenchmark1 {
 
     @State(Scope.Benchmark)
