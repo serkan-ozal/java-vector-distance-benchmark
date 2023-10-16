@@ -9,6 +9,42 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+      - run: npm install systeminformation
+      - name: Print System Info
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const si = require('systeminformation');
+            
+            si.system()
+              .then(data => console.log('System:', data))
+              .catch(error => console.error('Error occurred while getting System info:', error));
+            
+            si.osInfo()
+              .then(data => console.log('OS:', data))
+              .catch(error => console.error('Error occurred while getting OS info:', error));
+            
+            si.cpu()
+              .then(data => console.log('CPU:', data))
+              .catch(error => console.error('Error occurred while getting CPU info:', error));
+            
+            si.cpuFlags()
+              .then(data => console.log('CPU Flags:', data))
+              .catch(error => console.error('Error occurred while getting CPU flags info:', error));
+            
+            si.mem()
+              .then(data => console.log('Memory:', data))
+              .catch(error => console.error('Error occurred while getting memory info:', error));
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: oracle
+          java-version: 21
+      - name: Run Benchmarks
+        run: make run-benchmarks

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.sozal</groupId>
+    <artifactId>java-vector-distance-benchmark</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>java-vector-distance-benchmark</name>
+    <description>Java Vector Distance Benchmark</description>
+
+    <url>https://github.com/serkan-ozal/java-vector-distance-benchmark</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Serkan Özal</name>
+            <email>serkanozal86@gmail.com</email>
+            <organization>serkan-ozal</organization>
+            <organizationUrl>https://github.com/serkan-ozal</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/serkan-ozal/java-vector-distance-benchmark.git</url>
+        <connection>scm:git:https://${GITHUB_TOKEN}@github.com/serkan-ozal/java-vector-distance-benchmark.git</connection>
+        <developerConnection>scm:git:https://${GITHUB_TOKEN}@github.com/serkan-ozal/java-vector-distance-benchmark.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <jmh.version>1.37</jmh.version>
+        <maven.jmh.plugin.version>0.2.2</maven.jmh.plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>pw.krejci</groupId>
+                <artifactId>jmh-maven-plugin</artifactId>
+                <version>${maven.jmh.plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
