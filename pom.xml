@@ -28,7 +28,7 @@
     </developers>
 
     <scm>
-        <url>https://github.com/serkan-ozal/corvet.git</url>
+        <url>https://github.com/serkan-ozal/java-vector-distance-benchmark.git</url>
         <connection>scm:git:https://${GITHUB_TOKEN}@github.com/serkan-ozal/java-vector-distance-benchmark.git</connection>
         <developerConnection>scm:git:https://${GITHUB_TOKEN}@github.com/serkan-ozal/java-vector-distance-benchmark.git</developerConnection>
         <tag>HEAD</tag>
