@@ -49,5 +49,5 @@ jobs:
         with:
           distribution: oracle
           java-version: 21
-      - name: Run Benchmark 1
+      - name: Run Benchmark
         run: make run-${{ github.event.inputs.benchmark_name }}
