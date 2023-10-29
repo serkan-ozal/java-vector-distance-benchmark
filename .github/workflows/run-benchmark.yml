@@ -9,6 +9,7 @@ on:
         type: choice
         options:
           - "benchmark-1"
+          - "benchmark-2"
 
 jobs:
   build:
