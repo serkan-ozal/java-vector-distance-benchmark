@@ -50,5 +50,15 @@ jobs:
         with:
           distribution: oracle
           java-version: 21
+      - name: Prepare environment on Ubuntu
+        if: ${{ startsWith(matrix.os, 'ubuntu') }}
+        run: ./scripts/prepare-env-ubuntu.sh
+      - name: Prepare environment on MacOS
+        if: ${{ startsWith(matrix.os, 'macos') }}
+        run: ./scripts/prepare-env-macos.sh
+      - name: Prepare environment on Windows
+        shell: pwsh
+        if: ${{ startsWith(matrix.os, 'windows') }}
+        run: Powershell.exe -File scripts\prepare-env-windows.ps1
       - name: Run Benchmark
         run: make run-${{ github.event.inputs.benchmark_name }}

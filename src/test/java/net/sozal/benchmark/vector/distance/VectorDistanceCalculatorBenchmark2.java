@@ -19,7 +19,8 @@ import java.util.concurrent.TimeUnit;
 @Fork(value = 1, jvmArgs = {
         "--add-modules=jdk.incubator.vector",
         "-XX:+UnlockDiagnosticVMOptions",
-        "-XX:+PrintIntrinsics"
+        "-XX:+PrintIntrinsics",
+        "-XX:+PrintAssembly"
 })
 @Warmup(time = 5, iterations = 3, timeUnit = TimeUnit.SECONDS)
 @Measurement(time = 30, iterations = 5, timeUnit = TimeUnit.SECONDS)
