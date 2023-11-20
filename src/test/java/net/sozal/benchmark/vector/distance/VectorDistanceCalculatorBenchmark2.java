@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
         "--add-modules=jdk.incubator.vector",
         "-XX:+UnlockDiagnosticVMOptions",
         "-XX:+PrintIntrinsics",
-        "-XX:+PrintAssembly"
+        "-XX:CompileCommand=print,*VectorDistanceCalculator.*"
 })
 @Warmup(time = 5, iterations = 3, timeUnit = TimeUnit.SECONDS)
 @Measurement(time = 30, iterations = 5, timeUnit = TimeUnit.SECONDS)
